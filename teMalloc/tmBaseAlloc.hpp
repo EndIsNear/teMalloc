@@ -29,7 +29,14 @@ class BaseAlloc {
 		"TeMalloc:DefaultAlignment is less than 16");
 	static_assert((DefaultAlignment & (DefaultAlignment - 1)) == 0,
 		"TeMalloc:DefaultAlignment isn't power of 2");
+
+	BaseAlloc(const BaseAlloc&) = delete;
+	BaseAlloc(const BaseAlloc&&) = delete;
+	BaseAlloc& operator=(const BaseAlloc&) = delete;
 public:
+	const size_t aligmentSize = DefaultAlignment;
+	BaseAlloc() {}
+
 	inline Block alloc(size_t size) 
 	{
 		//TODO: portable
