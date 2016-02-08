@@ -34,7 +34,7 @@ class BaseAlloc {
 	BaseAlloc(const BaseAlloc&&) = delete;
 	BaseAlloc& operator=(const BaseAlloc&) = delete;
 public:
-	const size_t aligmentSize = DefaultAlignment;
+	const static size_t aligmentSize = DefaultAlignment;
 	BaseAlloc() {}
 
 	inline Block alloc(size_t size) 

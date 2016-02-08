@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tmBaseAlloc.hpp">
+    <ClInclude Include="tmFreeList.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tmBitmapAllocaotr.hpp">
+    <ClInclude Include="tmBaseAlloc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
