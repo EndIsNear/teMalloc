@@ -147,7 +147,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="tmBaseAlloc.hpp" />
+    <ClInclude Include="tmFallback.hpp" />
     <ClInclude Include="tmFreeList.hpp" />
+    <ClInclude Include="tmSegregator.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

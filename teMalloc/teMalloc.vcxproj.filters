@@ -21,5 +21,11 @@
     <ClInclude Include="tmBaseAlloc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tmFallback.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tmSegregator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
