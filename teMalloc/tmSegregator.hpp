@@ -1,6 +1,9 @@
 #pragma once
 #include "tmBaseAlloc.hpp"
 
+//If wanted memory sie is smaller than treshold SmallAlocator allocate the request
+//otherwise LargeAllocator
+
 template <size_t Treshold, class SmallAllocator, class LargeAllocator>
 class Segregator : private SmallAllocator, private LargeAllocator
 {

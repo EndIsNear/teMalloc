@@ -1,6 +1,9 @@
 #pragma once
 #include "tmBaseAlloc.hpp"
 
+//If Primaey allocators fail to alloc the needed memory
+//Fallback allocator is called to allocate it
+
 template <class Primary, class Fallback>
 class FallbackAllocator : private Primary, private Fallback
 {

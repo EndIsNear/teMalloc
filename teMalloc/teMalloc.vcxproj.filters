@@ -27,5 +27,8 @@
     <ClInclude Include="tmSegregator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tmThreadSpliter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
