@@ -9,7 +9,7 @@
 //NOTE: BaseAllocator Min size have to be at least sizeof(FreeList::FreeNode) + sizeof(size_t)
 
 template <class BaseAllocator>
-class FreeList
+class FreeList : private BaseAllocator
 {
 	struct FreeNode
 	{
@@ -19,9 +19,18 @@ class FreeList
 	} m_freeList;
 
 	std::mutex m_mutex;
-	BaseAllocator m_allocator;
 public:
 	FreeList() {}
+	~FreeList()
+	{
+		FreeNode * iter = m_freeList.nxt;
+		while (iter)
+		{
+			FreeNode * tmp = iter;
+			iter = iter->nxt;
+			BaseAllocator::free(Block(static_cast<void*>(tmp), tmp->size));
+		}
+	}
 
 	Block alloc(size_t size)
 	{
@@ -44,12 +53,12 @@ public:
 			}
 		}
 
-		return m_allocator.alloc(size);
+		return BaseAllocator::alloc(size);
 	}
 
 	bool owns(const Block& block) const
 	{
-		return m_allocator.owns(block);
+		return BaseAllocator::owns(block);
 	}
 
 	void free(Block& block)
