@@ -149,6 +149,7 @@
     <ClInclude Include="tmBaseAlloc.hpp" />
     <ClInclude Include="tmFallback.hpp" />
     <ClInclude Include="tmFreeList.hpp" />
+    <ClInclude Include="tmAffixAllocator.hpp" />
     <ClInclude Include="tmSegregator.hpp" />
     <ClInclude Include="tmThreadSpliter.hpp" />
   </ItemGroup>

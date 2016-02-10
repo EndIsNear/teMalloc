@@ -1,5 +1,12 @@
 #pragma once
 
+size_t alignTo(size_t crnSize, size_t aligment)
+{
+	if (crnSize % aligment)
+		return crnSize + aligment - (crnSize % aligment);
+	return crnSize;
+}
+
 struct Block {
 	Block() : ptr(0), len(0) {}
 	Block(void * ptr, size_t len) : ptr(ptr), len(len) {}
@@ -41,6 +48,11 @@ public:
 	{
 		//TODO: portable
 		return Block(_aligned_malloc(size, DefaultAlignment), size);
+	}
+
+	bool owns(const Block& a) const
+	{
+		return true;
 	}
 
 	inline void free(Block& block)
