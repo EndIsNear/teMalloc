@@ -1,6 +1,6 @@
 #pragma once
 
-size_t alignTo(size_t crnSize, size_t aligment)
+size_t roundTo(size_t crnSize, size_t aligment)
 {
 	if (crnSize % aligment)
 		return crnSize + aligment - (crnSize % aligment);

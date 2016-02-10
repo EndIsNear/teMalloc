@@ -5,7 +5,7 @@
 template <class Allocator, class Affix, bool IsPrefix = true>
 class AffixAllocator : private Allocator
 {
-	const int affixSize = alignTo(sizeof(Affix), Allocator::aligmentSize);// -(sizeof(Affix) % Allocator::aligmentSize);
+	const int affixSize = roundTo(sizeof(Affix), Allocator::aligmentSize);
 
 	inline void * moveWith(void * ptr, int size)
 	{
